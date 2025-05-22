@@ -3,48 +3,83 @@
 To write a C Program to find area of rectangle using pointer.
 
 ## ALGORITHM
-1.	Start the program.
-2.	Read two numbers.
-3.	Calculate the area of rectangle using the formula area=(x)(*y)
-4.	Display the result.
-5.	Stop the program.
+1. Start the program.
+2. Read two numbers.
+3. Calculate the area of rectangle using the formula area=(x)(*y)
+4. Display the result.
+5. Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main() {
+    float length, width, area;
+    float *ptrLength, *ptrWidth;
+    ptrLength = &length;
+    ptrWidth = &width;
+    scanf("%f", ptrLength);
+    scanf("%f", ptrWidth);
+    area = (*ptrLength) * (*ptrWidth);
+    printf("Area of rectangle = %f sq. units\n", area);
+    return 0;
+}
+```
 
 ## OUTPUT
-		       	
-
+![image](https://github.com/user-attachments/assets/b387fdcc-e19e-459b-b80a-c01cedd13f92)
 
 ## RESULT
 Thus the program to find area of rectangle using pointer has been executed successfully
  
- 
-
-
 # EX-27-DYNAMIC-MEMORY-ALLOCATION
 ## AIM
-To write a C Program to print 'WELCOME' using malloc() and free().
+To write a C program to get and print array of characters using malloc() and free()
 
 ## ALGORITHM
-1.	Start the program.
-2.	Read a string variable.
-3.	Allocate memory using malloc().
-4.	Display the string.
-5.	Remove the allocated memory using free().
-6.	Stop the program.
+1. Start.
+2. Declare an integer `n` and a character pointer `charArray`.
+3. Read the size `n` (number of characters to input).
+4. Allocate memory for `n` characters using `malloc`.
+5. If memory allocation fails, display an error message and exit.
+6. Use a loop to input `n` characters from the user.
+7. Use another loop to print the `n` characters.
+8. Print a newline.
+9. Free the allocated memory.
+10. End.
+
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <stdlib.h>
 
+int main() {
+    int n, i;
+    char *charArray;
+    scanf("%d", &n);
+    charArray = (char *)malloc(n * sizeof(char));
+    if (charArray == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    for (i = 0; i < n; i++) {
+        scanf(" %c", &charArray[i]);
+    }
+    for (i = 0; i < n; i++) {
+        printf("%c", charArray[i]);
+    }
+    printf("\n");
+    free(charArray);
+
+    return 0;
+}
+```
 ## OUTPUT
 
-
+![image](https://github.com/user-attachments/assets/a631af0b-7728-4f51-9883-ca560967abd0)
 
 ## RESULT
-Thus the program to print 'WELCOME' using malloc() and free() has been executed successfully
- 
-.
-
-
+Thus the program to get and print array of characters using malloc() and free()
 
 # EX-28-STUDENT-INFORMATION-USING-STRUCTURE
 
